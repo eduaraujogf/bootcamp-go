@@ -25,7 +25,7 @@ func main() {
 	// var nome string
 	// var sobrenome string
 	// var idade int
-	// sobrenome := 6
+	// sobrenome = "Sobrenome"
 	// var licencaParaDirigir = true
 	// var estaturaDaPessoa int
 	// quantidadeDeFilhos := 2
