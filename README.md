@@ -1,5 +1,5 @@
 # Bootcamp
 
-Descrição do bootcamp.
+Bootcamp description
 
 ## Bootcamp de GO - Mercado Livre

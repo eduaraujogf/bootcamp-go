@@ -1,9 +1,34 @@
 package main
 
 import (
+	circ "bootcamp-go/02-class/theory/pkg/circulo"
 	"errors"
 	"fmt"
 )
+
+// type Preferencias struct {
+// 	Comidas  string
+// 	Filme    string
+// 	Series   string
+// 	Animes   string
+// 	Esportes string
+// }
+
+// type Pessoa struct {
+// 	Nome      string
+// 	Gênero    string
+// 	Idade     int
+// 	Profissão string
+// 	Peso      float64
+// 	Gostos    Preferencias
+// }
+
+// type Pessoa struct {
+// 	PrimeiroNome string `json:"primeiro_nome", bson:"primeiroNome"`
+// 	Sobrenome    string `json:"sobrenome"`
+// 	Telefone     string `json:"sobrenome"`
+// 	Endereco     string `json:"endereco"`
+// }
 
 // func soma(a, b float32) float32 {
 // 	return a + b
@@ -97,5 +122,31 @@ func main() {
 	fmt.Println(sub)
 	fmt.Println(mult)
 	fmt.Println(div)
+
+	// eduardo := Pessoa{
+	// 	Nome:      "Eduardo",
+	// 	Gênero:    "Masculino",
+	// 	Idade:     25,
+	// 	Profissão: "Professor de Go",
+	// 	Peso:      99,
+	// 	Gostos: Preferencias{
+	// 		Comidas: "Frango",
+	// 		Filme:   "Titanic",
+	// 	},
+	// }
+	// p := Pessoa{"Paula", "Monteiro", "4512121", "Rua Liomeiro 123"}
+
+	// meuJson, err := json.Marshal(p)
+
+	// if err != nil {
+	// 	fmt.Println("Não foi possível gerar o JSON. erro:", err)
+	// }
+
+	// fmt.Println(string(meuJson))
+
+	circulo := circ.Circulo{}
+	circulo.SetarRaio(3)
+
+	fmt.Println(circulo.GetRaio())
 
 }
