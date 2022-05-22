@@ -21,10 +21,12 @@ func Types() {
 
 	var fname, lname string = "John", "Doe"
 
-	fmt.Println("\\ \' \" \n \t")
+	fmt.Println("\\ \" \n \t")
 
 	var abol, bbol bool = true, false
 
 	var abyt byte = 255
+
+	fmt.Println(fname, lname, abol, bbol, abyt, a, b, c, d, e, f, g, h, af, bf)
 
 }

@@ -1,5 +1,7 @@
 package main
 
+import "fmt"
+
 func Variables() {
 	var name string
 	var hours int
@@ -20,4 +22,6 @@ func Variables() {
 		QuantityConstBlock = 20
 		PriceConstBlock    = 40.50
 	)
+
+	fmt.Println(name, hours, product, price, productVarBlock, quantityVarBlock, priceVarBlock, inStock, Status, ProductConstBlock, QuantityConstBlock, PriceConstBlock)
 }

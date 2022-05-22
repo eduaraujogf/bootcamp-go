@@ -1,8 +1,9 @@
 package main
 
 import (
-	"bootcamp-go/02-class/practice/pkg"
 	"fmt"
+
+	"github.com/eduaraujogf/bootcamp-go/02-class/practice/pkg"
 )
 
 func main() {
