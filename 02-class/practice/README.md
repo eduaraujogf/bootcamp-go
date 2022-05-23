@@ -96,3 +96,50 @@ var amount float64
 amount+= animalDog(5)
 amount+= animalCat(8)
 ```
+----
+## Afternoon
+## Exercise 1 - Student Registration
+
+A university needs to register students and generate a functionality to print the details of each of them, as shown in the example below:
+>Name: [Student's name]  
+>Last name: [Student's last name]  
+>ID: [student ID]  
+>Admission Date: [Student Admission Date]
+
+The values ​​that are among those provided must be replaced by the data provided by the
+students.   
+For this, it is necessary to generate a structure student with the variables Name, Surname, RG,
+Date and that has a drill-down method
+
+## Exercise 2 - E-commerce products
+Several e-commerce stores need to perform functionality in Go to manage
+products and refund the full price.
+Companies have 3 types of products:
+>- Small, Medium and Large.
+There are additional costs for keeping the product in store storage and shipping costs.
+
+Additional cost list:
+>- Small: The cost of the product (no additional cost)
+>- Medium: The cost of the product + 3% for availability in stock
+>- Large: The cost of the product + 6% for availability in stock + a cost
+additional fee for sending $2500.
+
+
+Requirements:
+>- Create a “store” structure that stores a list of products.
+>- Create a “product” structure that stores the product type, name and price
+>- Create a “Product” interface that had the “CalculateCost” method
+>- Create an “Ecommerce” interface that had the “Total” and “Add” methods.
+>- You will need a “newProduct” function that + the type of product, its name
+and price, and delivers a Product.
+>- A “newStore” function will be needed to monetize an Ecommerce.
+>- Product Interface:
+>- Must have the "CalculateCost" method, where it must calculate the
+additional cost depending on the type of product.
+
+>- E-commerce interface:
+>- It must have the “Total” method, where it must return the total price with
+based on the total cost of the products + the surcharge mentioned above (if the category
+you have)
+>- Must have the "Add to receive" method, where it must have a new product
+and add it to store list

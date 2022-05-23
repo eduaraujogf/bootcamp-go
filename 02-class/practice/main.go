@@ -2,6 +2,7 @@ package main
 
 import (
 	"fmt"
+	"time"
 
 	"github.com/eduaraujogf/bootcamp-go/02-class/practice/pkg"
 )
@@ -69,4 +70,34 @@ func main() {
 	fmt.Printf("Amount of food to buy: %.2fkg\n", amount)
 
 	fmt.Println("--------------------------------------")
+	//Afternoon
+	fmt.Println("----------------Afternoon--------------\n")
+	fmt.Println("----------------Exercise-01--------------")
+	alexander := pkg.Student{
+		Name:          "Alexander",
+		Surname:       "Gomes",
+		RG:            "12141414",
+		AdmissionDate: time.Date(2022, 6, 23, 0, 0, 0, 0, time.UTC).Format("02/Jan/2006"),
+	}
+	julia := pkg.Student{
+		Name:          "Julia",
+		Surname:       "Pereira",
+		RG:            "33131145",
+		AdmissionDate: time.Date(2021, 2, 15, 0, 0, 0, 0, time.UTC).Format("02/Jan/2006"),
+	}
+
+	alexander.Details()
+	julia.Details()
+	fmt.Println("------------------------------------------")
+	fmt.Println("----------------Exercise-02--------------")
+	smallProduct := pkg.NewProduct(pkg.Small, "Book", 150.25)
+	mediumProduct := pkg.NewProduct(pkg.Medium, "Pan", 250.25)
+	largeProduct := pkg.NewProduct(pkg.Large, "Oven", 1200.25)
+	newStore := pkg.NewStore()
+	newStore.Add(smallProduct)
+	newStore.Add(mediumProduct)
+	newStore.Add(largeProduct)
+	fmt.Println(newStore.Total())
+
+	fmt.Println("------------------------------------------")
 }
