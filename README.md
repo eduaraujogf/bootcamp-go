@@ -19,3 +19,12 @@
 3. Functions with multiple return
 4. Functions with nominated return
 5. Functions with function return
+6. Structs
+7. Structs label
+8. Methods & pointers
+9. Embedding structs
+10. Interfaces
+11. Empty interfaces
+12. Type assertion
+
+
