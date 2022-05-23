@@ -1,6 +1,7 @@
 package main
 
 import (
+	"fmt"
 	"math"
 )
 
@@ -18,4 +19,14 @@ func (c Circle) perimeter() float64 {
 
 func (c *Circle) setRadius(r float64) {
 	c.radius = r
+}
+
+func main() {
+	c := Circle{radius: 5}
+	fmt.Printf("%.2f\n", c.area())
+	fmt.Printf("%.2f\n", c.perimeter())
+	c.setRadius(10)
+	fmt.Printf("%.2f\n", c.area())
+	fmt.Printf("%.2f\n", c.perimeter())
+
 }
