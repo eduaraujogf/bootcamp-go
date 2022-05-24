@@ -10,6 +10,12 @@ import (
 	"text/tabwriter"
 )
 
+func totalCalculator(priceString string, quantityString string) float64 {
+	price, _ := strconv.ParseFloat(strings.TrimSpace(priceString), 64)
+	quantity, _ := strconv.Atoi(strings.TrimSpace(quantityString))
+	return price * float64(quantity)
+}
+
 func readCSV(filepath string) {
 	file, err := os.Open("./03-class/practice/fileStore/" + filepath)
 	if err != nil {
@@ -38,11 +44,8 @@ func readCSV(filepath string) {
 		for i, v := range values {
 			fmt.Fprintf(w, "%s\t\t", v)
 			if i == 0 {
-				price, _ := strconv.ParseFloat(strings.TrimSpace(values[1]), 64)
-				quantity, _ := strconv.Atoi(strings.TrimSpace(values[2]))
-				total += price * float64(quantity)
+				total += totalCalculator(values[1], values[2])
 			}
-
 		}
 
 		fmt.Fprintln(w)
