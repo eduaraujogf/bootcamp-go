@@ -27,4 +27,8 @@
 11. Empty interfaces
 12. Type assertion
 
+## Go Bases III
+1. fmt package
+2. io package
+3. os package
 
