@@ -43,6 +43,7 @@ func readCSV(filepath string) {
 		values := strings.Split(scanner.Text(), ",")
 		for i, v := range values {
 			fmt.Fprintf(w, "%s\t\t", v)
+
 			if i == 0 {
 				total += totalCalculator(values[1], values[2])
 			}
