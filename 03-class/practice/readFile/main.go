@@ -5,6 +5,7 @@ import (
 	"fmt"
 	"log"
 	"os"
+	"strconv"
 	"strings"
 	"text/tabwriter"
 )
@@ -30,13 +31,24 @@ func readCSV(filepath string) {
 
 	fmt.Fprintln(w)
 
+	var total float64
+
 	for scanner.Scan() {
 		values := strings.Split(scanner.Text(), ",")
-		for _, v := range values {
+		for i, v := range values {
 			fmt.Fprintf(w, "%s\t\t", v)
+			if i == 0 {
+				price, _ := strconv.ParseFloat(strings.TrimSpace(values[1]), 64)
+				quantity, _ := strconv.Atoi(strings.TrimSpace(values[2]))
+				total += price * float64(quantity)
+			}
+
 		}
+
 		fmt.Fprintln(w)
 	}
+	fmt.Fprintf(w, "\t\t%.2f\n", total)
+
 	w.Flush()
 }
 
