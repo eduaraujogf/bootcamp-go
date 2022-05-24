@@ -9,7 +9,7 @@ const (
 )
 
 type store struct {
-	Products []product
+	Products []Product
 }
 
 type product struct {
@@ -24,7 +24,7 @@ type Product interface {
 
 type Ecommerce interface {
 	Total() (string, float64)
-	Add(product product)
+	Add(product Product)
 }
 
 func (p *product) costCalculator() float64 {
@@ -32,27 +32,25 @@ func (p *product) costCalculator() float64 {
 	case Small:
 		return 0.0
 	case Medium:
-		return p.Price * 0.03
+		return p.Price * 1.03
 	case Large:
-		return p.Price*0.06 + 2500.0
+		return p.Price*1.06 + 2500.0
 	}
 	return 0
 }
 
-func NewProduct(Type, Name string, Price float64) product {
-	return product{Type: Type, Name: Name, Price: Price}
+func NewProduct(Type, Name string, Price float64) Product {
+	return &product{Type, Name, Price}
 }
 
 func (s *store) Total() (message string, total float64) {
 	for _, product := range s.Products {
-		total += product.Price + product.costCalculator()
+		total += product.costCalculator()
 	}
-
-	message = "Total price with all coasts: R$"
-	return message, math.Round(total*100) / 100
+	return "Total price with all coasts: R$", math.Round(total*100) / 100
 }
 
-func (s *store) Add(product product) {
+func (s *store) Add(product Product) {
 	s.Products = append(s.Products, product)
 }
 
