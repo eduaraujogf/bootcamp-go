@@ -34,3 +34,13 @@
 4. Pointers
 5. Go routines
 6. Channel
+
+## Go Bases IV
+1. Error()
+2. errors.New()
+3. fmt.Errorf()
+4. As()
+5. Is()
+6. Unwrap()
+7. Errors return
+
