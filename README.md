@@ -31,4 +31,6 @@
 1. fmt package
 2. io package
 3. os package
-
+4. Pointers
+5. Go routines
+6. Channel
