@@ -1,6 +1,7 @@
 package main
 
 import (
+	"errors"
 	"fmt"
 	"os"
 )
@@ -29,14 +30,15 @@ func (c *client) generateId(id string) {
 	c.file = id
 }
 
-func (c *client) clientChecker(fileName string) {
+func (c *client) clientChecker(fileName string) error {
 	defer debugger()
 	file, err := os.Open(fileName)
 	if err != nil {
-		fmt.Println("The file was not found or it is damaged")
+		err = errors.New("the file was not found or it is damaged")
 		panic(err)
 	}
 	defer file.Close()
+	return nil
 }
 
 func main() {
@@ -44,5 +46,8 @@ func main() {
 	client.generateId("10")
 	fmt.Println(client)
 
-	client.clientChecker(client.file)
+	if err := client.clientChecker(client.file); err != nil {
+		fmt.Println(err)
+	}
+
 }
