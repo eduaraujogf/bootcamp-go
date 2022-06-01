@@ -18,7 +18,7 @@ func main() {
 		log.Fatal("erro ao carregar o arquivo .env")
 	}
 
-	db := store.New(store.FileType, "./products.json")
+	db := store.New(store.FileType, "go-web/products.json")
 	//1. repositório
 	repo := products.NewRepository(db)
 
