@@ -2,10 +2,12 @@ package controllers
 
 import (
 	"fmt"
+	"net/http"
 	"os"
 	"strconv"
 
 	"github.com/eduaraujogf/bootcamp-go/go-web/internal/products"
+	"github.com/eduaraujogf/bootcamp-go/go-web/pkg/web"
 
 	"github.com/gin-gonic/gin"
 )
@@ -37,7 +39,7 @@ func (c *ProductController) GetAll() gin.HandlerFunc {
 			})
 			return
 		}
-		ctx.JSON(200, p)
+		ctx.JSON(http.StatusOK, web.NewResponse(http.StatusOK, p, ""))
 	}
 }
 
@@ -49,12 +51,32 @@ func (c *ProductController) Store() gin.HandlerFunc {
 			return
 		}
 		var req request
+
 		if err := ctx.Bind(&req); err != nil {
 			ctx.JSON(404, gin.H{
 				"error": err.Error(),
 			})
 			return
 		}
+
+		if req.Name == "" {
+			ctx.JSON(http.StatusBadRequest, web.NewResponse(http.StatusBadRequest, nil, "o nome é obrigatório"))
+			return
+		}
+		if req.Type == "" {
+			ctx.JSON(http.StatusBadRequest, web.NewResponse(http.StatusBadRequest, nil, "o tipo é obrigatório"))
+
+			return
+		}
+		if req.Count == 0 {
+			ctx.JSON(http.StatusBadRequest, web.NewResponse(http.StatusBadRequest, nil, "o count é obrigatório"))
+			return
+		}
+		if req.Price == 0 {
+			ctx.JSON(http.StatusBadRequest, web.NewResponse(http.StatusBadRequest, nil, "o price é obrigatório"))
+			return
+		}
+
 		p, err := c.service.Store(req.Name, req.Type, req.Count, req.Price)
 		if err != nil {
 			ctx.JSON(404, gin.H{"error": err.Error()})
@@ -79,25 +101,26 @@ func (c *ProductController) Update() gin.HandlerFunc {
 		}
 
 		var req request
-		if err := ctx.ShouldBindJSON(&req); err != nil {
+		if err := ctx.Bind(&req); err != nil {
 			ctx.JSON(400, gin.H{"error": err.Error()})
 			return
 		}
 
 		if req.Name == "" {
-			ctx.JSON(400, gin.H{"error": "O nome do produto é obrigatório"})
+			ctx.JSON(http.StatusBadRequest, web.NewResponse(http.StatusBadRequest, nil, "o nome é obrigatório"))
 			return
 		}
 		if req.Type == "" {
-			ctx.JSON(400, gin.H{"error": "O tipo do produto é obrigatório"})
+			ctx.JSON(http.StatusBadRequest, web.NewResponse(http.StatusBadRequest, nil, "o tipo é obrigatório"))
+
 			return
 		}
 		if req.Count == 0 {
-			ctx.JSON(400, gin.H{"error": "A quantidade é obrigatória"})
+			ctx.JSON(http.StatusBadRequest, web.NewResponse(http.StatusBadRequest, nil, "o count é obrigatório"))
 			return
 		}
 		if req.Price == 0 {
-			ctx.JSON(400, gin.H{"error": "O preço é obrigatório"})
+			ctx.JSON(http.StatusBadRequest, web.NewResponse(http.StatusBadRequest, nil, "o price é obrigatório"))
 			return
 		}
 

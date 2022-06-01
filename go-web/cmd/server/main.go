@@ -6,7 +6,7 @@ import (
 	"github.com/eduaraujogf/bootcamp-go/go-web/cmd/server/controllers"
 	"github.com/eduaraujogf/bootcamp-go/go-web/internal/email"
 	"github.com/eduaraujogf/bootcamp-go/go-web/internal/products"
-	store "github.com/eduaraujogf/bootcamp-go/go-web/pkg"
+	"github.com/eduaraujogf/bootcamp-go/go-web/pkg/store"
 	"github.com/joho/godotenv"
 
 	"github.com/gin-gonic/gin"
