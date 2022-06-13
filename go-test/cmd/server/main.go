@@ -1,17 +1,17 @@
 package main
 
 import (
-	"github.com/eduaraujogf/bootcamp-go/cmd/server/controllers"
-	"github.com/eduaraujogf/bootcamp-go/docs"
+	"github.com/eduaraujogf/bootcamp-go/go-test/cmd/server/controllers"
+	"github.com/eduaraujogf/bootcamp-go/go-test/docs"
 
 	"log"
 	"net/http"
 	"os"
 
-	"github.com/eduaraujogf/bootcamp-go/internal/email"
-	"github.com/eduaraujogf/bootcamp-go/internal/products"
-	"github.com/eduaraujogf/bootcamp-go/pkg/store"
-	"github.com/eduaraujogf/bootcamp-go/pkg/web"
+	"github.com/eduaraujogf/bootcamp-go/go-test/internal/email"
+	"github.com/eduaraujogf/bootcamp-go/go-test/internal/products"
+	"github.com/eduaraujogf/bootcamp-go/go-test/pkg/store"
+	"github.com/eduaraujogf/bootcamp-go/go-test/pkg/web"
 
 	"github.com/gin-gonic/gin"
 	"github.com/joho/godotenv"

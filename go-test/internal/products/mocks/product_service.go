@@ -1,7 +1,7 @@
 package mocks
 
 import (
-	"github.com/eduaraujogf/bootcamp-go/internal/products"
+	"github.com/eduaraujogf/bootcamp-go/go-test/internal/products"
 
 	"github.com/stretchr/testify/mock"
 )

@@ -1,7 +1,7 @@
 package products
 
 import (
-	"github.com/eduaraujogf/bootcamp-go/internal/email"
+	"github.com/eduaraujogf/bootcamp-go/go-test/internal/email"
 )
 
 type Service interface {

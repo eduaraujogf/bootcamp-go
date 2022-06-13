@@ -3,7 +3,7 @@ package products
 import (
 	"fmt"
 
-	"github.com/eduaraujogf/bootcamp-go/pkg/store"
+	"github.com/eduaraujogf/bootcamp-go/go-test/pkg/store"
 )
 
 //Repositorio

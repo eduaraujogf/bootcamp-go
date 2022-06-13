@@ -5,9 +5,9 @@ import (
 	"errors"
 	"testing"
 
-	"github.com/eduaraujogf/bootcamp-go/internal/products"
-	"github.com/eduaraujogf/bootcamp-go/internal/products/mocks"
-	"github.com/eduaraujogf/bootcamp-go/pkg/store"
+	"github.com/eduaraujogf/bootcamp-go/go-test/internal/products"
+	"github.com/eduaraujogf/bootcamp-go/go-test/internal/products/mocks"
+	"github.com/eduaraujogf/bootcamp-go/go-test/pkg/store"
 
 	"github.com/stretchr/testify/assert"
 )
